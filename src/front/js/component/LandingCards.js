@@ -33,7 +33,7 @@ function LandingCards() {
               <div className="card bg-transparent border-0">
                 <img className="card-img-top" src={cardImage3} alt="Image 3" />
                 <div className="card-body p-0">
-                  <h5 className="card-title" style={{ height: '60px' }}>¿Simplemente quieres encontrar con quien compartir un café?</h5>
+                  <h5 className="card-title" style={{ height: '60px' }}>¿Simplemente quieres compartir un café?</h5>
                   <p className="card-text">¡Encuentra un compañero para cada situación!</p>
                 </div>
               </div>
