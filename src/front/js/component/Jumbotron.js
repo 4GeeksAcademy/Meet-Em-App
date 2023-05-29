@@ -11,7 +11,7 @@ function Jumbotron() {
         <div className="col-lg-3"></div>
         <div className="col-lg-4 mb-6">
           <div className="row">
-            <div className="col-lg-9">
+            <div className="col-lg-9 m-2">
               <h1>¡Encontrar compañía nunca fue tan fácil!</h1>
               <p>
                 Sean cuales sean que tus planes, intereses u objetivos aquí podrás encontrar desde tu siguiente Gym Buddy, a un compañero de estudios o incluso simplemente alguien

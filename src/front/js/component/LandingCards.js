@@ -13,7 +13,7 @@ function LandingCards() {
           <div className="row">
             <div className="col-md-4 mb-4">
               <div className="card bg-transparent border-0">
-                <img className="card-img-top" src={cardImage1} alt="Image 1" />
+                <img className="card-img-top" src={cardImage1} alt="Compañeros estudiando" />
                 <div className="card-body p-0">
                   <h5 className="card-title" style={{ height: '60px' }}>Encuentra compañeros de estudio</h5>
                   <p className="card-text">¿Para qué estudiar solo pudiendo hacerlo en compañía?</p>
@@ -22,7 +22,7 @@ function LandingCards() {
             </div>
             <div className="col-md-4 mb-4">
               <div className="card bg-transparent border-0">
-                <img className="card-img-top" src={cardImage2} alt="Image 2" />
+                <img className="card-img-top" src={cardImage2} alt="Compañeros en un gimnasio" />
                 <div className="card-body p-0">
                   <h5 className="card-title" style={{ height: '60px' }}>¿Te aterra ir solo al gimnasio?</h5>
                   <p className="card-text">¡Encuentra aquí tu próximo gym buddy!</p>
