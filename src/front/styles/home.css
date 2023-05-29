@@ -1,7 +1,33 @@
-/*
-    home.css: This website contains selectors only used in home.css
+body {
+    background-image: url(https://i.imgur.com/UhyCM6V.png);
+    background-repeat: no-repeat;
+}
 
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
-    on that page only (the ones not reused in other pages).
-*/
+.link-unstyled {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .link-unstyled:hover,
+  .link-unstyled:focus {
+    text-decoration: none;
+  }
+
+.FooterIcon {
+    color: white;
+}
+
+.image-container {
+    width: 100%;
+    height: 0;
+    position: relative;
+  }
+  
+.responsive-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
