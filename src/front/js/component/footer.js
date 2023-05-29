@@ -24,9 +24,10 @@ export const Footer = () => {
 				  <div className="col-md-3">
 					<h3>Connect</h3>
 					<ul className="social-links list-unstyled">
-					  <li><a href="#" className="link-unstyled"><i className="fab fa-twitter FooterIcon"></i></a></li>
-					  <li><a href="#" className="link-unstyled"><i className="fab fa-facebook FooterIcon"></i></a></li>
-					  <li><a href="#" className="link-unstyled"><i className="fab fa-instagram FooterIcon"></i></a></li>
+					  <li><a href="#" className="link-unstyled"><i className="fab fa-twitter FooterIcon"></i> MeetEmApp</a></li>
+					  <li><a href="#" className="link-unstyled"><i className="fab fa-facebook FooterIcon"></i> Meet Em App!</a></li>
+					  <li><a href="#" className="link-unstyled"><i className="fab fa-instagram FooterIcon"></i> MeetEmApp</a></li>
+					  <li><a href="#" className="link-unstyled"><i className="fab fa-tiktok FooterIcon"></i> MeetEmApp</a></li>
 					</ul>
 				  </div>
 				</div>
@@ -40,7 +41,7 @@ export const Footer = () => {
 				  <div className="col-md-8">
 					<div className="row">
 					  <div className="col-md-6">
-						<p>&copy; {new Date().getFullYear()} Your Web App. All rights reserved.</p>
+						<p>&copy; {new Date().getFullYear()} Meet Em App!</p>
 					  </div>
 					  <div className="col-md-6">
 						<ul className="footer-nav list-unstyled">
