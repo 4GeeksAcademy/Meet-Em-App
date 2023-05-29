@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export const LoginFormBirthDate = () => {
+export const SignUpFormBirthDate = () => {
 
     const [years, setYears] = useState([]);
     const [selectedMonth, setSelectedMonth] = useState("");

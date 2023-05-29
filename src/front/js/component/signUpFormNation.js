@@ -3,7 +3,7 @@ import countries from "countries-list";
 import { Link } from "react-router-dom";
 
 
-export const LoginFormNation = () => {
+export const SignUpFormNation = () => {
 
     const nationalityList = Object.values(countries.countries).map((country) => country.name);
 

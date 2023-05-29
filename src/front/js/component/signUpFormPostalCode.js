@@ -2,7 +2,7 @@ import React from "react";
 
 
 
-export const LoginFormPostalCode = () => {
+export const SignUpFormPostalCode = () => {
 
     return (
 
