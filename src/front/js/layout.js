@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { BackendURL } from './component/backendURL';
-
 import { PrivateRoutes } from './component/privateRoutes';
 import { PublicRoutes } from './component/publicRoutes';
 import Home from './pages/home';
 import Login from './pages/login';
 import injectContext from './store/appContext';
-
 
 //create your first component
 const Layout = () => {
