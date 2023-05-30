@@ -63,38 +63,5 @@ export const Navbar = () => {
 			</div>
 		</nav>
 
-
-
-		// <nav className="navbar navbar-light bg-light">
-		// 	<div className="container">
-		// 		<Link to="/">
-		// 			<span className="navbar-brand mb-0 h1"> ???????? </span>
-		// 		</Link>
-		// 		<div className="ml-auto">
-		// 			<li className="nav-item dropdown">
-		// 				<a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-		// 					Image profile
-		// 				</a>
-		// 				<ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-		// 					<li>
-		// 						<a className="dropdown-item" href="#"> Messages </a>
-		// 					</li>
-		// 					<li>
-		// 						<a className="dropdown-item" href="#"> Events </a>
-		// 					</li>
-		// 					<li>
-		// 						<hr className="dropdown-divider" />
-		// 					</li>
-		// 					<li>
-		// 						<a className="dropdown-item" href="#"> Dark Mode </a>
-		// 					</li>
-		// 					<li>
-		// 						<a className="dropdown-item" href="#"> Log out </a>
-		// 					</li>
-		// 				</ul>
-		// 			</li>
-		// 		</div>
-		// 	</div>
-		// </nav>
-	);
+	)
 };
