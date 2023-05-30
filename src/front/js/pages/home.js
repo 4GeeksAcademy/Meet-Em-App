@@ -1,18 +1,14 @@
 import React from "react";
-
-
-
-
-
 import "../../styles/home.css";
-import { LoginForm } from "../component/singUpForm";
+import { SignUpForm } from "../component/signUpForm";
+
 
 
 export const Home = () => {
 
     return (
         <>
-            <LoginForm/>
+            <SignUpForm/>
         </>
 
     )

@@ -53,7 +53,6 @@ export function SignUpForm() {
                         id="inputUsername"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
-                        required
                     />
                 </div>
                 <div className="col-md-12">
@@ -66,7 +65,6 @@ export function SignUpForm() {
                         id="inputEmail4"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        required
                     />
                 </div>
                 <div className="col-md-12">
@@ -79,7 +77,6 @@ export function SignUpForm() {
                         id="inputPassword4"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        required
                     />
                 </div>
                 <div className="col-md-12">
@@ -92,7 +89,6 @@ export function SignUpForm() {
                         id="inputConfirmPassword4"
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
-                        required
                     />
                     {!passwordMatch && <div className="invalid-feedback">Passwords do not match.</div>}
                 </div>

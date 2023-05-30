@@ -10,9 +10,8 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import {SignUpFormBirthDate} from "./component/signUpFormBirthDate";
-import { SignUpFormNation } from "./component/signUpFormNation";
-import { SignUpFormPostalCode } from "./component/signUpFormPostalCode";
+
+
 
 
 //create your first component
@@ -32,10 +31,6 @@ const Layout = () => {
                         <Route element={<Home />} path="/" />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />
-                        <Route element={<SignUpFormBirthDate/>} path="/SignUpFormBirthDate"/>
-                        <Route element={<SignUpFormNation/>} path="/SignUpFormNation"/>
-                        <Route element={<SignUpFormPostalCode/>} path="/SignUpFormPostalCode"/>
-
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
