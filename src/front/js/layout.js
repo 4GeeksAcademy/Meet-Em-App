@@ -4,8 +4,8 @@ import { BackendURL } from './component/backendURL';
 import { PrivateRoutes } from './component/privateRoutes';
 import { PublicRoutes } from './component/publicRoutes';
 import Home from './pages/home';
-import Login from './pages/login';
 import injectContext from './store/appContext';
+import Login from './pages/login';
 
 //create your first component
 const Layout = () => {

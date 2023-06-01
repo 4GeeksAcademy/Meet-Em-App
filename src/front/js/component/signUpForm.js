@@ -1,122 +1,155 @@
-import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 
-export function SignUpForm() {
-    const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [passwordMatch, setPasswordMatch] = useState(true);
-    const [showPassword, setShowPassword] = useState(false);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+export const SignUpForm = () => {
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [disableSignUp, setDisableSignUp] = useState(true);
 
-        if (password === confirmPassword) {
-            // Passwords match, proceed with form submission
-            // Add your logic here
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+    setErrorMessage(""); // Clear error message on password change
+  };
 
-            // Reset the form fields
-            setUsername('');
-            setEmail('');
-            setPassword('');
-            setConfirmPassword('');
-        } else {
-            // Passwords don't match, display an error message and reset confirm password field
-            setPasswordMatch(false);
-            setConfirmPassword('');
-            
-        }
-    };
+  const handleConfirmPasswordChange = (e) => {
+    setConfirmPassword(e.target.value);
+    setErrorMessage(""); // Clear error message on confirm password change
+  };
 
-    const handleShowPassword = () => {
-        setShowPassword(!showPassword);
-    };
+  const handlePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
-    const isFormValid = username.trim() !== '' && email.trim() !== '' && password.trim() !== '' && confirmPassword.trim() !== '' && password === confirmPassword;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (password === confirmPassword) {
+      // Passwords match
+      // Proceed with signup logic
+      console.log("Contraseña válida");
+    } else {
+      // Passwords don't match
+      setErrorMessage("Passwords do not match");
+    }
+  };
+
+  // Enable or disable the sign-up button based on password matching
+  React.useEffect(() => {
+    setDisableSignUp(password !== confirmPassword);
+  }, [password, confirmPassword]);
 
 
     return (
-        <div className="container col-4 bg-light mt-5">
-            <form className="row g-3" onSubmit={handleSubmit}>
+        <div className="container-signUp">
+        <form className="form-signUp" onSubmit={handleSubmit}>
                 <div className="col-md-12">
-                    <div className="d-flex justify-content-center mt-3"><h1>Join ?????</h1></div>
-                    <div className="d-flex justify-content-center"><h4>Post events and make new friends</h4></div>
+                    <label htmlFor="inputUserName" className="form-label">
+                        Username
+                    </label>
+                    <input type="username" className="form-control" id="inputUserName" />
                 </div>
                 <div className="col-md-12">
-                    <label htmlFor="inputUsername" className="form-label">
-                        Username
+                    <label htmlFor="inputState" className="form-label">
+                        Interest
+                    </label>
+                    <select id="inputState" className="form-select">
+                        <option selected="">Choose...</option>
+                        <option>...</option>
+                    </select>
+                </div>
+                <div className="col-12">
+                    <label htmlFor="inputAddress" className="form-label">
+                        Address
                     </label>
                     <input
                         type="text"
                         className="form-control"
-                        id="inputUsername"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        id="inputAddress"
+                        placeholder="1234 Main St"
                     />
-                </div>
-                <div className="col-md-12">
-                    <label htmlFor="inputEmail4" className="form-label">
-                        Email
-                    </label>
-                    <input
-                        type="email"
-                        className="form-control"
-                        id="inputEmail4"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                </div>
-                <div className="col-md-12">
-                    <label htmlFor="inputPassword4" className="form-label">
-                        Create Password
-                    </label>
-                    <input
-                        type={showPassword ? "text" : "password"}
-                        className="form-control"
-                        id="inputPassword4"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </div>
-                <div className="col-md-12">
-                    <label htmlFor="inputConfirmPassword4" className="form-label">
-                        Confirm Password
-                    </label>
-                    <input
-                        type={showPassword ? "text" : "password"}
-                        className={`form-control ${!passwordMatch ? 'is-invalid' : ''}`}
-                        id="inputConfirmPassword4"
-                        value={confirmPassword}
-                        onChange={(e) => setConfirmPassword(e.target.value)}
-                    />
-                    {!passwordMatch && <div className="invalid-feedback">Passwords do not match.</div>}
                 </div>
                 <div className="col-12">
-                    <div className="show-password">
+                    <label htmlFor="inputAddress2" className="form-label">
+                        Address 2
+                    </label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="inputAddress2"
+                        placeholder="Apartment, studio, or floor"
+                    />
+                </div>
+                <div className="col-md-12">
+                    <label htmlFor="inputState" className="form-label">
+                        Country
+                    </label>
+                    <select id="inputState" className="form-select">
+                        <option selected="">Choose...</option>
+                        <option>...</option>
+                    </select>
+                </div>
+                <div className="col-md-12">
+                    <label htmlFor="inputCity" className="form-label">
+                        City
+                    </label>
+                    <input type="text" className="form-control" id="inputCity" />
+                </div>
+                <div className="col-md-12">
+                    <label htmlFor="inputEmail" className="form-label">
+                        Email
+                    </label>
+                    <input type="email" className="form-control" id="inputEmail" />
+                </div>
+                <div className="col-md-12">
+                    <label htmlFor="inputPassword" className="form-label">
+                        Password
+                    </label>
+                    <div className="password-input">
                         <input
-                            className="show-password-check"
-                            type="checkbox"
-                            id="show-password-check"
-                            checked={showPassword}
-                            onChange={handleShowPassword}
+                            type={showPassword ? "text" : "password"}
+                            className="form-control"
+                            id="inputPassword"
+                            value={password}
+                            onChange={handlePasswordChange}
                         />
-                        <label className="show-password-label ms-2" htmlFor="show-password-check"> Show password
-                        </label>
                     </div>
                 </div>
                 <div className="col-md-12">
-                    <Link to={isFormValid ? "/loginFormBirthDate" : "#"}>
-                        <button type="submit" disabled={!isFormValid} className="btn btn-primary mb-3 col-12">
-                            Sign up
-                        </button>
-                    </Link>
+                    <label htmlFor="inputConfirmPassword" className="form-label">
+                        Confirm Password
+                    </label>
+                    <div className="password-input">
+                        <input
+                            type={showPassword ? "text" : "password"}
+                            className="form-control"
+                            id="inputConfirmPassword"
+                            value={confirmPassword}
+                            onChange={handleConfirmPasswordChange}
+                        />
+                        <i
+                            className={`password-icon fa-solid ${showPassword ? "fa-eye-slash" : "fa-eye"
+                                }`}
+                            onClick={handlePasswordVisibility}
+                        ></i>
+                    </div>
+                    {errorMessage && (
+                        <div className="alert alert-danger mt-3" role="alert">
+                            {errorMessage}
+                        </div>
+                    )}
+                </div>
+                <div className="col-12">
+                    <button
+                        type="submit"
+                        className="btn btn-primary"
+                        disabled={disableSignUp}
+                    >
+                        Sign up
+                    </button>
                 </div>
             </form>
         </div>
     );
-}
-
-
-
-
+};
