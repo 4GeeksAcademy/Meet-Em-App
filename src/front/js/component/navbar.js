@@ -40,16 +40,11 @@ export const Navbar = () => {
 								</li>
 								<li>
 									<a className="dropdown-item" href="#">
-										Events
+										Create events
 									</a>
 								</li>
 								<li>
 									<hr className="dropdown-divider" />
-								</li>
-								<li>
-									<a className="dropdown-item" href="#">
-										Dark Mode
-									</a>
 								</li>
 								<li>
 									<a className="dropdown-item" href="#">

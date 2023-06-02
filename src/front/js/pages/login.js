@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './login.css';
+import { Navbar } from '../component/navbar';
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -13,6 +14,8 @@ const Login = () => {
     };
 
     return (
+        <>
+        <Navbar/>
         <div className='container' style={{ backgroundImage: `url(../../loginWallpaper.png)` }}>
             <div className='login-box'>
                 <h2 className='my-3'>Iniciar sesión</h2>
@@ -48,6 +51,7 @@ const Login = () => {
                 </form>
             </div>
         </div>
+        </>
     );
 };
 
