@@ -20,15 +20,14 @@ import injectContext from './store/appContext';
 const Layout = () => {
     //the basename is used when your project is published in a subdirectory and not in the root of the domain
     // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
-    const basename = process.env.BASENAME || '';
-    const [user, setUser] = useState({ logged: false });
+    const basename = process.env.BASENAME || "";
 
-    if (!process.env.BACKEND_URL || process.env.BACKEND_URL == '') return <BackendURL />;
+    if (!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL />;
 
     return (
         <div>
-            <Router basename={basename}>
-                <div className='main'>
+            <BrowserRouter basename={basename}>
+                <ScrollToTop>
                     <Routes>
                         <Route path='/' element={<Landing />} />
                         <Route path='public' element={<PublicRoutes user={user} />}>
@@ -48,8 +47,9 @@ const Layout = () => {
                             <Route path='*' element={<Navigate to='home' />} />
                         </Route>
                     </Routes>
-                </div>
-            </Router>
+                    <Footer />
+                </ScrollToTop>
+            </BrowserRouter>
         </div>
     );
 };
