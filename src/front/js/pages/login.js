@@ -13,6 +13,8 @@ const Login = () => {
     };
 
     return (
+        <>
+        <Navbar/>
         <div className='container' style={{ backgroundImage: `url(../../loginWallpaper.png)` }}>
             <div className='login-box'>
                 <h2 className='my-3'>Iniciar sesión</h2>
@@ -48,6 +50,7 @@ const Login = () => {
                 </form>
             </div>
         </div>
+        </>
     );
 };
 
