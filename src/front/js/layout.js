@@ -1,13 +1,20 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ScrollToTop from "./component/scrollToTop";
-import { BackendURL } from "./component/backendURL";
-import { Demo } from "./pages/demo";
-import { Single } from "./pages/single";
-import injectContext from "./store/appContext";
-import { Footer } from "./component/footer";
-import { Landing } from "./pages/landing";
-import { Events } from "./pages/events";
+import React, { useState } from 'react';
+import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { BackendURL } from './component/backendURL';
+import { PrivateRoutes } from './component/privateRoutes';
+import { PublicRoutes } from './component/publicRoutes';
+import Aboutus from './pages/aboutus';
+import Chat from './pages/chat';
+import CreateEvents from './pages/createEvents';
+import EditProfile from './pages/editProfile';
+import Events from './pages/events';
+import { Landing } from './pages/landing';
+import Login from './pages/login';
+import MyEvents from './pages/myEvents';
+import Profile from './pages/profile';
+import Search from './pages/search';
+import { SignUp } from './pages/signUp';
+import injectContext from './store/appContext';
 
 //create your first component
 const Layout = () => {
@@ -22,11 +29,23 @@ const Layout = () => {
             <BrowserRouter basename={basename}>
                 <ScrollToTop>
                     <Routes>
-                        <Route element={<Landing />} path="/" />
-                        <Route element={<Events />} path="/events" />
-                        <Route element={<Demo />} path="/demo" />
-                        <Route element={<Single />} path="/single/:theid" />
-                        <Route element={<h1>Not found!</h1>} />
+                        <Route path='/' element={<Landing />} />
+                        <Route path='public' element={<PublicRoutes user={user} />}>
+                            <Route path='public/login' element={<Login />} />
+                            <Route path='public/signup' element={<SignUp />} />
+                            <Route path='public/about-us' element={<Aboutus />} />
+                            <Route path='*' element={<Navigate to='/' />} />
+                        </Route>
+                        <Route path='private' element={<PrivateRoutes user={user} />}>
+                            <Route path='private/chat' element={<Chat />} />
+                            <Route path='private/edit-profile' element={<EditProfile />} />
+                            <Route path='private/profile' element={<Profile />} />
+                            <Route path='private/my-events' element={<MyEvents />} />
+                            <Route path='private/search' element={<Search />} />
+                            <Route path='private/create-events' element={<CreateEvents />} />
+                            <Route path='private//' element={<Events />} />
+                            <Route path='*' element={<Navigate to='home' />} />
+                        </Route>
                     </Routes>
                     <Footer />
                 </ScrollToTop>
